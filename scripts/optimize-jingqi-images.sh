@@ -20,7 +20,7 @@ fi
 if [ "$#" -gt 0 ]; then
   image_names="$*"
 else
-  image_names="attendees.jpg competition.jpg panel.jpg sharing.jpg"
+  image_names="competition.jpg panel.jpg sharing.jpg"
 fi
 
 for image_name in $image_names; do
