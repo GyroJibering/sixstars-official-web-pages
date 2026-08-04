@@ -341,37 +341,16 @@ a {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 }
 
-.hero-image-frame > img {
+.hero-image-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 48% center;
   filter: contrast(1.02);
   transition: transform 900ms var(--ease);
 }
 
-.hero-visual:hover .hero-image-frame > img {
+.hero-visual:hover img {
   transform: scale(1.015);
-}
-
-.hero-mark {
-  position: absolute;
-  left: 18px;
-  bottom: 18px;
-  width: 88px;
-  height: 88px;
-  padding: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(17, 18, 16, 0.12);
-  border-radius: 17px;
-  background: rgba(255, 255, 255, 0.94);
-  box-shadow: 0 10px 30px rgba(17, 18, 16, 0.08);
-}
-
-.hero-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .hero-visual figcaption {
@@ -382,6 +361,27 @@ a {
   font-size: 9px;
   font-weight: 620;
   letter-spacing: 0.13em;
+}
+
+.visual-note {
+  padding: 0 0 76px;
+  background: var(--paper);
+}
+
+.visual-note-frame {
+  width: min(100%, 500px);
+  margin-inline: auto;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  aspect-ratio: 1260 / 941;
+  background: #fff;
+}
+
+.visual-note-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .section {
@@ -401,6 +401,18 @@ a {
 
 .statement-heading {
   grid-column: 1 / span 7;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  column-gap: 30px;
+  align-items: end;
+}
+
+.statement-heading > .eyebrow {
+  grid-column: 1 / -1;
+}
+
+.statement-heading h2 {
+  grid-column: 1;
 }
 
 .statement-heading h2,
@@ -428,9 +440,10 @@ a {
 }
 
 .statement-art {
-  grid-column: 2 / span 4;
-  width: min(100%, 390px);
-  margin-top: 88px;
+  grid-column: 2;
+  grid-row: 2;
+  width: 170px;
+  justify-self: end;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -509,10 +522,11 @@ a {
 }
 
 .discipline-artwork {
-  margin-top: 92px;
+  width: min(100%, 640px);
+  margin: 64px auto 0;
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: minmax(0, 1fr) 120px;
+  gap: 16px;
   align-items: end;
 }
 
@@ -525,8 +539,8 @@ a {
 }
 
 .discipline-artwork-main {
-  grid-column: 1 / span 8;
-  aspect-ratio: 1.45 / 1;
+  grid-column: 1;
+  aspect-ratio: 1.7 / 1;
 }
 
 .discipline-artwork-main img {
@@ -534,7 +548,7 @@ a {
 }
 
 .discipline-artwork-note {
-  grid-column: 10 / -1;
+  grid-column: 2;
   aspect-ratio: 251 / 352;
 }
 
@@ -559,6 +573,7 @@ a {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
+  align-items: end;
 }
 
 .honor-feature-year {
@@ -571,7 +586,7 @@ a {
 }
 
 .honor-feature-copy {
-  grid-column: 5 / span 7;
+  grid-column: 5 / span 5;
 }
 
 .honor-label {
@@ -606,7 +621,10 @@ a {
 }
 
 .honor-artwork {
-  margin-top: 54px;
+  grid-column: 10 / -1;
+  width: min(100%, 300px);
+  margin: 0;
+  justify-self: end;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 16px;
@@ -765,7 +783,9 @@ a {
 }
 
 .alumni-art {
+  width: min(100%, 320px);
   margin-top: 42px;
+  margin-left: auto;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 15px;
@@ -861,7 +881,7 @@ a {
 .team-artwork {
   grid-column: 9 / -1;
   grid-row: 1;
-  width: min(100%, 340px);
+  width: min(100%, 270px);
   justify-self: end;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -1049,8 +1069,8 @@ a {
 }
 
 .join-artwork {
-  width: 150px;
-  margin-top: 38px;
+  width: 112px;
+  margin-top: 30px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
@@ -1353,6 +1373,10 @@ a {
     font-size: 8px;
   }
 
+  .visual-note {
+    padding-bottom: 56px;
+  }
+
   .section {
     padding: 104px 0;
   }
@@ -1375,8 +1399,20 @@ a {
   }
 
   .statement-art {
-    margin-top: 0;
+    grid-row: auto;
+    width: 140px;
+    margin-top: 26px;
     justify-self: end;
+  }
+
+  .statement-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .statement-heading > .eyebrow,
+  .statement-heading h2,
+  .statement-art {
+    grid-column: 1;
   }
 
   .statement-heading h2,
@@ -1416,16 +1452,18 @@ a {
   }
 
   .discipline-artwork {
+    width: min(100%, 480px);
     margin-top: 64px;
+    grid-template-columns: minmax(0, 1fr) 84px;
     gap: 12px;
   }
 
   .discipline-artwork-main {
-    grid-column: 1 / span 9;
+    grid-column: 1;
   }
 
   .discipline-artwork-note {
-    grid-column: 10 / -1;
+    grid-column: 2;
   }
 
   .honors-head {
@@ -1439,7 +1477,8 @@ a {
   }
 
   .honor-feature-year,
-  .honor-feature-copy {
+  .honor-feature-copy,
+  .honor-artwork {
     grid-column: 1;
   }
 
@@ -1449,6 +1488,11 @@ a {
 
   .honor-feature h3 {
     font-size: 31px;
+  }
+
+  .honor-artwork {
+    width: min(100%, 260px);
+    justify-self: start;
   }
 
   .record-row {
@@ -1471,7 +1515,7 @@ a {
   }
 
   .team-artwork {
-    width: min(100%, 360px);
+    width: min(100%, 240px);
     justify-self: start;
   }
 
@@ -1512,7 +1556,7 @@ a {
   }
 
   .join-artwork {
-    width: 124px;
+    width: 100px;
     margin-top: 30px;
   }
 
