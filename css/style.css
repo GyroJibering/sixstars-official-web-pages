@@ -363,27 +363,6 @@ a {
   letter-spacing: 0.13em;
 }
 
-.visual-note {
-  padding: 0 0 76px;
-  background: var(--paper);
-}
-
-.visual-note-frame {
-  width: min(100%, 400px);
-  margin-inline: auto;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  aspect-ratio: 1260 / 941;
-  background: #fff;
-}
-
-.visual-note-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .section {
   padding: 150px 0;
 }
@@ -525,30 +504,18 @@ a {
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 14px;
-  align-items: end;
+  place-items: center;
 }
 
-.discipline-artwork-main,
 .discipline-artwork-note {
+  width: min(100%, 180px);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: #fff;
 }
 
-.discipline-artwork-main {
-  grid-column: 1 / -1;
-  aspect-ratio: 1.45 / 1;
-}
-
-.discipline-artwork-main img {
-  object-position: center 42%;
-}
-
 .discipline-artwork-note {
-  grid-column: 8 / -1;
   aspect-ratio: 251 / 352;
 }
 
@@ -1073,13 +1040,21 @@ a {
   font-size: 16px;
 }
 
-.join-artwork {
-  width: 150px;
+.join-artwork-row {
+  width: min(100%, 430px);
   margin-top: 38px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.join-artwork {
+  width: 100%;
+  margin: 0;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 12px;
-  aspect-ratio: 390 / 517;
+  aspect-ratio: 1 / 1;
   background: #fff;
 }
 
@@ -1382,10 +1357,6 @@ a {
     font-size: 8px;
   }
 
-  .visual-note {
-    padding-bottom: 56px;
-  }
-
   .section {
     padding: 104px 0;
   }
@@ -1469,16 +1440,10 @@ a {
     grid-column: 1;
     width: 100%;
     margin-top: 44px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .discipline-artwork-main {
-    grid-column: 1 / -1;
   }
 
   .discipline-artwork-note {
-    grid-column: 9 / -1;
+    width: min(100%, 160px);
   }
 
   .honors-head {
@@ -1574,9 +1539,15 @@ a {
     gap: 58px;
   }
 
+  .join-artwork-row {
+    width: 100%;
+    margin-top: 34px;
+    gap: 9px;
+  }
+
   .join-artwork {
-    width: 124px;
-    margin-top: 38px;
+    width: 100%;
+    margin: 0;
   }
 
   .footer-main {
