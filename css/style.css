@@ -583,11 +583,11 @@ a {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 24px;
-  align-items: end;
+  align-items: start;
 }
 
 .team-heading {
-  grid-column: 1 / span 7;
+  grid-column: 1 / span 8;
 }
 
 .team-heading > p:last-child {
@@ -597,8 +597,15 @@ a {
   font-size: 17px;
 }
 
+.members-directory {
+  grid-column: 1 / -1;
+  margin-top: 76px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
 .member-profile {
-  grid-column: 9 / -1;
   min-height: 420px;
   padding: 32px;
   border: 1px solid var(--line);
@@ -607,6 +614,11 @@ a {
   flex-direction: column;
   background: #fafaf8;
   transition: transform 300ms var(--ease), border-color 240ms ease;
+}
+
+.member-profile--captain {
+  border-color: rgba(22, 124, 90, 0.28);
+  background: #f5f8f5;
 }
 
 .member-profile:hover {
@@ -651,9 +663,11 @@ a {
 
 .member-profile strong {
   margin-top: 10px;
-  font-size: 38px;
+  overflow-wrap: anywhere;
+  font-size: clamp(28px, 2.5vw, 38px);
   font-weight: 610;
   letter-spacing: -0.045em;
+  line-height: 1.12;
 }
 
 .member-link {
@@ -864,8 +878,8 @@ a {
     grid-column: 1 / span 7;
   }
 
-  .member-profile {
-    grid-column: 8 / -1;
+  .members-directory {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .join-panel {
@@ -995,7 +1009,7 @@ a {
   .statement-heading,
   .statement-body,
   .team-heading,
-  .member-profile {
+  .members-directory {
     grid-column: 1;
   }
 
@@ -1068,6 +1082,11 @@ a {
 
   .team-layout {
     align-items: start;
+  }
+
+  .members-directory {
+    margin-top: 18px;
+    grid-template-columns: 1fr;
   }
 
   .member-profile {
