@@ -341,16 +341,37 @@ a {
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 }
 
-.hero-image-frame img {
+.hero-image-frame > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: 48% center;
   filter: contrast(1.02);
   transition: transform 900ms var(--ease);
 }
 
-.hero-visual:hover img {
+.hero-visual:hover .hero-image-frame > img {
   transform: scale(1.015);
+}
+
+.hero-mark {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  width: 88px;
+  height: 88px;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(17, 18, 16, 0.12);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(17, 18, 16, 0.08);
+}
+
+.hero-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-visual figcaption {
@@ -404,6 +425,28 @@ a {
   color: var(--ink-soft);
   font-size: 17px;
   line-height: 1.85;
+}
+
+.statement-art {
+  grid-column: 2 / span 4;
+  width: min(100%, 390px);
+  margin-top: 88px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+}
+
+.statement-art img,
+.discipline-artwork img,
+.honor-artwork img,
+.alumni-art img,
+.team-artwork img,
+.join-artwork img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .disciplines {
@@ -463,6 +506,36 @@ a {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.65;
+}
+
+.discipline-artwork {
+  margin-top: 92px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+  align-items: end;
+}
+
+.discipline-artwork-main,
+.discipline-artwork-note {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.discipline-artwork-main {
+  grid-column: 1 / span 8;
+  aspect-ratio: 1.45 / 1;
+}
+
+.discipline-artwork-main img {
+  object-position: center 42%;
+}
+
+.discipline-artwork-note {
+  grid-column: 10 / -1;
+  aspect-ratio: 251 / 352;
 }
 
 .honors {
@@ -530,6 +603,19 @@ a {
   padding-bottom: 3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   font-size: 14px;
+}
+
+.honor-artwork {
+  margin-top: 54px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 16px;
+  aspect-ratio: 1080 / 554;
+  background: #fff;
+}
+
+.honor-artwork img {
+  filter: contrast(1.035);
 }
 
 .record-list {
@@ -678,6 +764,19 @@ a {
   line-height: 1.8;
 }
 
+.alumni-art {
+  margin-top: 42px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  aspect-ratio: 4 / 3;
+  background: #fff;
+}
+
+.alumni-art img {
+  object-position: center 42%;
+}
+
 .alumni-list {
   margin-top: 52px;
   display: grid;
@@ -740,9 +839,11 @@ a {
 }
 
 .marquee-toggle {
-  grid-column: 11 / -1;
+  grid-column: 1 / -1;
+  grid-row: 2;
   align-self: end;
   justify-self: end;
+  margin-top: 14px;
   padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -755,6 +856,22 @@ a {
   font-size: 12px;
   cursor: pointer;
   transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.team-artwork {
+  grid-column: 9 / -1;
+  grid-row: 1;
+  width: min(100%, 340px);
+  justify-self: end;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  aspect-ratio: 4 / 5;
+  background: #fff;
+}
+
+.team-artwork img {
+  object-position: center 32%;
 }
 
 .marquee-toggle:hover {
@@ -776,6 +893,7 @@ a {
 
 .member-marquee {
   grid-column: 1 / -1;
+  grid-row: 3;
   min-width: 0;
   width: 100%;
   margin-top: 54px;
@@ -923,11 +1041,21 @@ a {
   font-size: clamp(42px, 4.5vw, 64px);
 }
 
-.join-copy > p:last-child {
+.join-summary {
   max-width: 560px;
   margin-top: 26px;
   color: #aeb2ac;
   font-size: 16px;
+}
+
+.join-artwork {
+  width: 150px;
+  margin-top: 38px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  aspect-ratio: 390 / 517;
+  background: #fff;
 }
 
 .join-details {
@@ -1108,7 +1236,7 @@ a {
   }
 
   .marquee-toggle {
-    grid-column: 10 / -1;
+    grid-column: 1 / -1;
   }
 
   .join-panel {
@@ -1238,10 +1366,17 @@ a {
 
   .statement-heading,
   .statement-body,
+  .statement-art,
   .team-heading,
+  .team-artwork,
   .marquee-toggle,
   .member-marquee {
     grid-column: 1;
+  }
+
+  .statement-art {
+    margin-top: 0;
+    justify-self: end;
   }
 
   .statement-heading h2,
@@ -1280,6 +1415,19 @@ a {
     grid-column: auto;
   }
 
+  .discipline-artwork {
+    margin-top: 64px;
+    gap: 12px;
+  }
+
+  .discipline-artwork-main {
+    grid-column: 1 / span 9;
+  }
+
+  .discipline-artwork-note {
+    grid-column: 10 / -1;
+  }
+
   .honors-head {
     margin-bottom: 60px;
   }
@@ -1316,6 +1464,17 @@ a {
     align-items: start;
   }
 
+  .team-artwork,
+  .marquee-toggle,
+  .member-marquee {
+    grid-row: auto;
+  }
+
+  .team-artwork {
+    width: min(100%, 360px);
+    justify-self: start;
+  }
+
   .alumni-heading,
   .alumni-content {
     grid-column: 1;
@@ -1350,6 +1509,11 @@ a {
     padding: 48px 28px;
     grid-template-columns: 1fr;
     gap: 58px;
+  }
+
+  .join-artwork {
+    width: 124px;
+    margin-top: 30px;
   }
 
   .footer-main {
