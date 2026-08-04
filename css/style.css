@@ -704,7 +704,7 @@ a {
   grid-column: 1 / -1;
   min-width: 0;
   width: 100%;
-  margin-top: 76px;
+  margin-top: 54px;
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
@@ -712,17 +712,17 @@ a {
 
 .member-marquee-track {
   width: max-content;
-  padding: 6px 0 12px;
+  padding: 8px 0 14px;
   display: flex;
   will-change: transform;
-  animation: member-scroll 44s linear infinite;
+  animation: member-scroll 40s linear infinite;
 }
 
 .members-directory {
   flex: none;
   display: flex;
-  gap: 18px;
-  padding-right: 18px;
+  gap: 24px;
+  padding-right: 24px;
 }
 
 .member-marquee:hover .member-marquee-track,
@@ -738,15 +738,18 @@ a {
 }
 
 .member-profile {
-  width: 324px;
-  min-height: 350px;
-  padding: 26px;
+  flex: 0 0 248px;
+  width: 248px;
+  min-width: 248px;
+  min-height: 278px;
+  padding: 20px;
   border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border-radius: 14px;
   display: flex;
   flex-direction: column;
   background: #fafaf8;
-  transition: transform 300ms var(--ease), border-color 240ms ease;
+  box-shadow: 0 8px 24px rgba(17, 18, 16, 0.035);
+  transition: transform 300ms var(--ease), border-color 240ms ease, box-shadow 240ms ease;
 }
 
 .member-profile--captain {
@@ -755,20 +758,22 @@ a {
 }
 
 .member-profile:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
   border-color: #aeb1aa;
+  box-shadow: 0 12px 30px rgba(17, 18, 16, 0.07);
 }
 
 .member-top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: 16px;
 }
 
 .member-avatar {
-  width: 88px;
-  height: 88px;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
   overflow: hidden;
   border: 1px solid rgba(17, 18, 16, 0.1);
   border-radius: 50%;
@@ -789,31 +794,40 @@ a {
 .member-meta {
   margin-top: auto;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 8.5px;
   font-weight: 650;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 }
 
 .member-profile strong {
-  margin-top: 10px;
+  margin-top: 8px;
   overflow-wrap: anywhere;
-  font-size: 28px;
+  font-size: 23px;
   font-weight: 610;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.035em;
   line-height: 1.12;
+}
+
+.member-profile--long-name strong {
+  font-size: 19px;
+  letter-spacing: -0.045em;
 }
 
 .member-link {
   color: var(--accent-dark);
-  font-size: 14px;
+  font-size: 11px;
+  white-space: nowrap;
 }
 
 .member-bio {
-  max-width: 340px;
-  margin-top: 14px;
+  margin-top: 10px;
   color: var(--ink-soft);
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 12px;
+  line-height: 1.6;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .join {
@@ -1242,14 +1256,16 @@ a {
   }
 
   .member-marquee {
-    margin-top: 18px;
+    margin-top: 12px;
     mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
   }
 
   .member-profile {
-    width: min(82vw, 310px);
-    min-height: 340px;
+    flex-basis: 224px;
+    width: 224px;
+    min-width: 224px;
+    min-height: 270px;
   }
 
   .join {
