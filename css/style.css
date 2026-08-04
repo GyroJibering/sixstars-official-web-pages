@@ -369,7 +369,7 @@ a {
 }
 
 .visual-note-frame {
-  width: min(100%, 500px);
+  width: min(100%, 400px);
   margin-inline: auto;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -576,8 +576,15 @@ a {
   align-items: end;
 }
 
+.honor-feature-visual {
+  grid-column: 1 / span 5;
+  display: grid;
+  gap: 28px;
+  align-self: stretch;
+  align-content: space-between;
+}
+
 .honor-feature-year {
-  grid-column: 1 / span 3;
   color: #7ebca2;
   font-size: clamp(60px, 7vw, 100px);
   font-weight: 580;
@@ -586,7 +593,8 @@ a {
 }
 
 .honor-feature-copy {
-  grid-column: 5 / span 5;
+  grid-column: 7 / -1;
+  align-self: center;
 }
 
 .honor-label {
@@ -621,10 +629,9 @@ a {
 }
 
 .honor-artwork {
-  grid-column: 10 / -1;
-  width: min(100%, 300px);
+  width: min(100%, 430px);
   margin: 0;
-  justify-self: end;
+  justify-self: start;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 16px;
@@ -1476,10 +1483,14 @@ a {
     gap: 34px;
   }
 
-  .honor-feature-year,
+  .honor-feature-visual,
   .honor-feature-copy,
   .honor-artwork {
     grid-column: 1;
+  }
+
+  .honor-feature-visual {
+    gap: 22px;
   }
 
   .honor-feature-year {
@@ -1491,7 +1502,7 @@ a {
   }
 
   .honor-artwork {
-    width: min(100%, 260px);
+    width: min(100%, 380px);
     justify-self: start;
   }
 
