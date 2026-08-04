@@ -3,280 +3,251 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="复旦大学六星战队（******）官方网站 —— 复旦大学网络安全 CTF 战队" />
+  <meta name="description" content="复旦大学六星战队（******）官方网站 —— 探索网络安全边界的 CTF 战队。" />
+  <meta name="theme-color" content="#f5f5f3" />
   <title>六星战队 ****** | 复旦大学 CTF 战队</title>
+  <link rel="icon" type="image/jpeg" href="assets/sixstars-team-mark.jpg" />
+  <link rel="preload" as="image" href="assets/sixstars-team-mark.jpg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
 
-  <!-- 顶部导航 -->
   <header class="navbar" id="navbar">
     <div class="navbar-inner">
-      <a class="logo" href="#top">
-        <img class="logo-img" src="logo.png" alt="六星战队 ******" />
+      <a class="brand" href="#top" aria-label="返回六星战队首页">
+        <span class="brand-image">
+          <img src="assets/sixstars-team-mark.jpg" alt="" />
+        </span>
+        <span class="brand-copy">
+          <strong>******</strong>
+          <small>FUDAN CTF TEAM</small>
+        </span>
       </a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">关于我们</a>
-        <a href="#fields">研究方向</a>
-        <a href="#honors">荣誉成就</a>
-        <a href="#members">团队成员</a>
-        <a href="#join">加入我们</a>
+      <nav class="nav-links" id="navLinks" aria-label="主要导航">
+        <a href="#about">关于</a>
+        <a href="#fields">方向</a>
+        <a href="#honors">荣誉</a>
+        <a href="#members">成员</a>
+        <a class="nav-cta" href="#join">加入我们</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
   <main id="main">
-  <!-- Hero 区 -->
-  <section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true">
-      <canvas id="starCanvas"></canvas>
-      <div class="hero-grid"></div>
-      <div class="hero-scanline"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-tag">&gt; Fudan University CTF Team_</p>
-      <h1 class="glitch">复旦大学的网络安全爱好者聚集地</h1>
-      <p class="hero-sub">六星战队 ****** —— 与我们一起，在攻防之间探索安全的边界</p>
-      <div class="hero-actions">
-        <a class="btn btn--primary" href="#honors">查看战队荣誉</a>
-        <a class="btn btn--ghost" href="#join">加入我们</a>
-      </div>
-      <div class="hero-proof" aria-label="战队代表荣誉">
-        <div><strong>DEF CON</strong><span>2020 World Champion</span></div>
-        <div><strong>BLACK HAT MEA</strong><span>2025 World Champion</span></div>
-        <div><strong>*CTF</strong><span>XCTF Station Organizer</span></div>
-      </div>
-    </div>
-  </section>
+    <section class="hero" id="top">
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">FUDAN UNIVERSITY · CTF TEAM</p>
+          <h1>以好奇心，<br />挑战安全边界。</h1>
+          <p class="hero-summary">六星战队是复旦大学网络安全 CTF 战队。我们研究系统、拆解规则，并在真实对抗中持续进化。</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#honors">查看战队荣誉</a>
+            <a class="button button-secondary" href="#about">了解六星 <span aria-hidden="true">↘</span></a>
+          </div>
+          <dl class="hero-facts" aria-label="战队代表成绩">
+            <div>
+              <dt>2020</dt>
+              <dd>DEF CON<br />世界冠军</dd>
+            </div>
+            <div>
+              <dt>2025</dt>
+              <dd>Black Hat MEA<br />世界冠军</dd>
+            </div>
+            <div>
+              <dt>*CTF</dt>
+              <dd>XCTF 国际联赛<br />分站赛</dd>
+            </div>
+          </dl>
+        </div>
 
-  <!-- 简介 -->
-  <section class="section intro" id="about">
-    <div class="container">
-      <header class="section-head section-head--left">
-        <p class="section-kicker">WHO WE ARE</p>
-        <h2>在攻防之间，保持好奇与锋芒</h2>
-        <p>我们相信，真正的安全能力来自持续学习、动手实践与开放协作。</p>
-      </header>
-      <div class="intro-grid">
-        <article>
-          <span class="intro-index">01</span>
-          <h3>复旦大学 CTF 校队</h3>
-          <p>六星战队（******）是由复旦大学计算机科学技术学院学生组成的网络安全 CTF 战队。战队长期活跃于国内外各大 CTF 竞赛，并作为 XCTF 联赛社区战队主办 *CTF 国际赛。</p>
-        </article>
-        <article>
-          <span class="intro-index">02</span>
-          <h3>网络安全爱好者的聚集地</h3>
-          <p>我们是一群对网络安全充满热情的同学，研究方向覆盖二进制漏洞挖掘与利用、Web 渗透、密码学、逆向工程、区块链安全等领域，让每一位安全爱好者都能找到属于自己的舞台。</p>
-        </article>
+        <figure class="hero-visual reveal">
+          <div class="hero-image-frame">
+            <img src="assets/sixstars-team-mark.jpg" alt="六星战队黑白队标视觉" width="1254" height="1254" fetchpriority="high" />
+          </div>
+          <figcaption>
+            <span>TEAM MARK · 2026</span>
+            <span>SHANGHAI / FUDAN</span>
+          </figcaption>
+        </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 研究方向 -->
-  <section class="section section-alt" id="fields">
-    <div class="container">
-      <header class="section-head">
-        <p class="section-kicker">WHAT WE EXPLORE</p>
-        <h2>我们的方向</h2>
-        <p>CTF 六大经典方向，总有一个适合你</p>
-      </header>
-      <div class="fields-grid">
-        <article class="field-card">
-          <span class="field-index">01</span>
-          <div class="field-icon">Pwn</div>
-          <h3>二进制漏洞利用</h3>
-          <p>挖掘并利用程序中的内存破坏漏洞，劫持控制流，夺取系统权限。</p>
-        </article>
-        <article class="field-card">
-          <span class="field-index">02</span>
-          <div class="field-icon">Web</div>
-          <h3>Web 安全</h3>
-          <p>研究 Web 应用中的注入、越权、反序列化等漏洞，攻破层层防线。</p>
-        </article>
-        <article class="field-card">
-          <span class="field-index">03</span>
-          <div class="field-icon">Rev</div>
-          <h3>逆向工程</h3>
-          <p>拆解二进制程序，还原程序逻辑，与混淆和加壳斗智斗勇。</p>
-        </article>
-        <article class="field-card">
-          <span class="field-index">04</span>
-          <div class="field-icon">Crypto</div>
-          <h3>密码学</h3>
-          <p>分析密码算法的设计与实现缺陷，用数学破解加密的秘密。</p>
-        </article>
-        <article class="field-card">
-          <span class="field-index">05</span>
-          <div class="field-icon">Misc</div>
-          <h3>安全杂项</h3>
-          <p>取证分析、隐写、编码等包罗万象的安全技术，考验知识的广度。</p>
-        </article>
-        <article class="field-card">
-          <span class="field-index">06</span>
-          <div class="field-icon">Chain</div>
-          <h3>区块链安全</h3>
-          <p>研究智能合约与区块链系统的安全问题，探索 Web3 时代的攻防。</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 荣誉成就 -->
-  <section class="section" id="honors">
-    <div class="container">
-      <header class="section-head">
-        <p class="section-kicker">TRACK RECORD</p>
-        <h2>荣誉成就</h2>
-        <p>从六星本队到高校联合战队，我们始终活跃在世界级攻防赛场</p>
-      </header>
-      <div class="honors-highlight">
-        <span class="honors-highlight-year">2025</span>
-        <div>
-          <p class="honors-highlight-kicker">LATEST GLOBAL TITLE</p>
-          <h3><span class="mono">*0xA</span> 勇夺 Black Hat MEA CTF Final 世界冠军</h3>
-          <p>六星与浙江大学 AAA、上海交通大学 0ops 组成联合战队，以 8225 分排名第一，夺得本届国际赛事总冠军。</p>
-          <a href="https://www.fudan.edu.cn/2025/1219/c24a147800/page.htm" target="_blank" rel="noopener">查看复旦大学报道 →</a>
+    <section class="section statement" id="about">
+      <div class="container">
+        <div class="statement-heading reveal">
+          <p class="eyebrow">WHO WE ARE</p>
+          <h2>技术不是标签。<br />它是我们理解世界的方式。</h2>
+        </div>
+        <div class="statement-body reveal">
+          <p>六星战队（******）由复旦大学计算机科学技术学院学生组成，长期活跃于国内外高水平 CTF 赛事，并作为 XCTF 联赛社区战队主办 *CTF 国际赛。</p>
+          <p>我们相信真正的安全能力来自持续学习、动手实践与开放协作。这里没有固定答案，只有值得被重新审视的系统与边界。</p>
         </div>
       </div>
-      <div class="honors-table-wrap">
-        <table class="honors-table">
-          <thead>
-            <tr><th>年份</th><th>参赛队伍</th><th>赛事 / 荣誉</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="honor-year">2022</td>
-              <td><span class="honor-team">******</span></td>
-              <td><a href="https://software.fudan.edu.cn/bb/e0/c29332a441312/page.htm" target="_blank" rel="noopener">承办第七届 XCTF 国际联赛分站赛 *CTF，吸引 52 个国家和地区、531 支战队参赛</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2020</td>
-              <td><span class="honor-team honor-team--alliance">A*0*E</span></td>
-              <td><a href="https://cs.fudan.edu.cn/17/6d/c24256a268141/page.htm" target="_blank" rel="noopener">DEF CON CTF 2020 决赛世界冠军</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2020</td>
-              <td><span class="honor-team honor-team--alliance">A*0*E</span></td>
-              <td><a href="https://ctftime.org/team/38901/" target="_blank" rel="noopener">PlaidCTF 2020 冠军、DEF CON CTF Qualifier 2020 冠军</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2019</td>
-              <td><span class="honor-team honor-team--alliance">A*0*E</span></td>
-              <td><a href="https://news.fudan.edu.cn/2019/0904/c40a99816/page.htm" target="_blank" rel="noopener">DEF CON CTF 2019 决赛世界第四名</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2019</td>
-              <td><span class="honor-team">******</span></td>
-              <td><a href="https://news.fudan.edu.cn/2019/0807/c5a99121/page.htm" target="_blank" rel="noopener">第十二届全国大学生信息安全竞赛创新实践能力赛总决赛一等奖</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2018</td>
-              <td><span class="honor-team honor-team--alliance">A*0*E</span></td>
-              <td><a href="https://ctftime.org/event/666/" target="_blank" rel="noopener">DEF CON CTF 2018 决赛世界第四名</a> · <a href="https://ctftime.org/team/38901/" target="_blank" rel="noopener">PlaidCTF 2018 冠军</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2018</td>
-              <td><span class="honor-team">******</span></td>
-              <td><a href="https://cs.fudan.edu.cn/0f/b1/c24286a266161/page.htm" target="_blank" rel="noopener">鹏城杯网络安全竞赛线上 CTF 解题赛第一名</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2017</td>
-              <td><span class="honor-team honor-team--alliance">A*0*E</span></td>
-              <td><a href="https://jd.fudan.edu.cn/12/15/c13570a135701/page.htm" target="_blank" rel="noopener">首次征战 DEF CON CTF 决赛，获得世界季军</a></td>
-            </tr>
-            <tr>
-              <td class="honor-year">2015</td>
-              <td><span class="honor-team">******</span></td>
-              <td><a href="https://ai.fudan.edu.cn/16/3d/c24867a267837/page.htm" target="_blank" rel="noopener">第二届 XCTF 国际联赛福州站（RCTF）线上赛第二名</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="honors-more"><span class="mono">A*0*E</span> 由六星与国内高校、企业安全力量组成，曾连续四届进入 DEF CON CTF 决赛（2017–2020）；<span class="mono">*0xA</span> 是六星参与的新一代高校联合战队。表中每项成绩均附公开来源。</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- 团队成员 -->
-  <section class="section section-alt" id="members">
-    <div class="container">
-      <header class="section-head">
-        <p class="section-kicker">THE TEAM</p>
-        <h2>认识我们的团队</h2>
-        <p>来自复旦大学各院系的安全爱好者</p>
-      </header>
-      <div class="members-grid members-grid--single">
-        <article class="member-card member-card--featured">
-          <a class="member-profile-link" href="https://gyrojibering.github.io/" target="_blank" rel="noopener" aria-label="访问 GyroJ 的个人主页">
-            <div class="member-avatar" aria-hidden="true">GJ</div>
-            <span class="member-role">现任队长</span>
-            <h3>GyroJ</h3>
-            <p>Web · Reverse</p>
-            <span class="member-homepage">个人主页 ↗</span>
-          </a>
-        </article>
+    <section class="section disciplines" id="fields">
+      <div class="container">
+        <header class="section-head reveal">
+          <div>
+            <p class="eyebrow">DISCIPLINES</p>
+            <h2>六种方向，<br />同一种专注。</h2>
+          </div>
+          <p>从底层系统到链上世界，我们用可验证的技术探索安全问题。</p>
+        </header>
+        <div class="discipline-list">
+          <article class="discipline-item reveal">
+            <span>01</span><h3>Pwn</h3><p>二进制漏洞挖掘、内存破坏与系统利用。</p>
+          </article>
+          <article class="discipline-item reveal">
+            <span>02</span><h3>Web</h3><p>应用安全、身份边界与复杂业务逻辑。</p>
+          </article>
+          <article class="discipline-item reveal">
+            <span>03</span><h3>Reverse</h3><p>程序分析、代码还原与对抗性逆向。</p>
+          </article>
+          <article class="discipline-item reveal">
+            <span>04</span><h3>Crypto</h3><p>密码系统、数学结构与实现缺陷。</p>
+          </article>
+          <article class="discipline-item reveal">
+            <span>05</span><h3>Misc</h3><p>取证、隐写、编码与跨领域问题求解。</p>
+          </article>
+          <article class="discipline-item reveal">
+            <span>06</span><h3>Blockchain</h3><p>智能合约、共识系统与链上安全。</p>
+          </article>
+        </div>
       </div>
-      <p class="members-note">更多现役与历届成员资料正在整理中。</p>
-    </div>
-  </section>
+    </section>
 
-  <!-- 加入我们 -->
-  <section class="section join" id="join">
-    <div class="container">
-      <header class="section-head">
-        <p class="section-kicker">JOIN SIXSTARS</p>
-        <h2>加入我们</h2>
-        <p>无论你是刚入门的新手，还是身经百战的选手，我们都欢迎你</p>
-      </header>
-      <div class="join-grid">
-        <article class="join-card">
-          <h3>你将获得</h3>
-          <ul>
-            <li>系统的 CTF 各方向入门培训与技术分享</li>
-            <li>与队友一起参加国内外高水平 CTF 竞赛的机会</li>
-            <li>浓厚的技术氛围与志同道合的伙伴</li>
-            <li>参与组织 *CTF 等大型赛事的经历</li>
-          </ul>
+    <section class="section honors" id="honors">
+      <div class="container">
+        <header class="honors-head reveal">
+          <p class="eyebrow">SELECTED RECORD</p>
+          <h2>在世界级赛场，<br />留下可验证的成绩。</h2>
+        </header>
+
+        <article class="honor-feature reveal">
+          <div class="honor-feature-year">2025</div>
+          <div class="honor-feature-copy">
+            <p class="honor-label">LATEST GLOBAL TITLE</p>
+            <h3><span class="mono">*0xA</span> 获 Black Hat MEA CTF Final 世界冠军</h3>
+            <p>六星与浙江大学 AAA、上海交通大学 0ops 组成联合战队，以 8225 分排名第一，夺得国际赛事总冠军。</p>
+            <a href="https://www.fudan.edu.cn/2025/1219/c24a147800/page.htm" target="_blank" rel="noopener">复旦大学官方报道 <span aria-hidden="true">↗</span></a>
+          </div>
         </article>
-        <article class="join-card">
-          <h3>我们期待</h3>
-          <ul>
-            <li>对网络安全有浓厚的兴趣与热情</li>
-            <li>具备一定的编程基础，乐于钻研</li>
-            <li>愿意投入时间训练并参加比赛</li>
-            <li>诚实守信，遵守法律与道德底线</li>
-          </ul>
-        </article>
+
+        <div class="record-list reveal" role="list" aria-label="历年荣誉">
+          <article class="record-row" role="listitem">
+            <time>2022</time><span class="record-team">******</span>
+            <p><a href="https://software.fudan.edu.cn/bb/e0/c29332a441312/page.htm" target="_blank" rel="noopener">承办第七届 XCTF 国际联赛分站赛 *CTF，吸引 52 个国家和地区、531 支战队参赛</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2020</time><span class="record-team">A*0*E</span>
+            <p><a href="https://cs.fudan.edu.cn/17/6d/c24256a268141/page.htm" target="_blank" rel="noopener">DEF CON CTF 2020 决赛世界冠军</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2020</time><span class="record-team">A*0*E</span>
+            <p><a href="https://ctftime.org/team/38901/" target="_blank" rel="noopener">PlaidCTF 2020 冠军、DEF CON CTF Qualifier 2020 冠军</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2019</time><span class="record-team">A*0*E</span>
+            <p><a href="https://news.fudan.edu.cn/2019/0904/c40a99816/page.htm" target="_blank" rel="noopener">DEF CON CTF 2019 决赛世界第四名</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2019</time><span class="record-team">******</span>
+            <p><a href="https://news.fudan.edu.cn/2019/0807/c5a99121/page.htm" target="_blank" rel="noopener">全国大学生信息安全竞赛创新实践能力赛总决赛一等奖</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2018</time><span class="record-team">A*0*E</span>
+            <p><a href="https://ctftime.org/event/666/" target="_blank" rel="noopener">DEF CON CTF 决赛世界第四名</a> · <a href="https://ctftime.org/team/38901/" target="_blank" rel="noopener">PlaidCTF 冠军</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2018</time><span class="record-team">******</span>
+            <p><a href="https://cs.fudan.edu.cn/0f/b1/c24286a266161/page.htm" target="_blank" rel="noopener">鹏城杯网络安全竞赛线上 CTF 解题赛第一名</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2017</time><span class="record-team">A*0*E</span>
+            <p><a href="https://jd.fudan.edu.cn/12/15/c13570a135701/page.htm" target="_blank" rel="noopener">首次征战 DEF CON CTF 决赛，获得世界季军</a></p>
+          </article>
+          <article class="record-row" role="listitem">
+            <time>2015</time><span class="record-team">******</span>
+            <p><a href="https://ai.fudan.edu.cn/16/3d/c24867a267837/page.htm" target="_blank" rel="noopener">第二届 XCTF 国际联赛福州站 RCTF 线上赛第二名</a></p>
+          </article>
+        </div>
+        <p class="record-note reveal"><span class="mono">A*0*E</span> 曾连续四届进入 DEF CON CTF 决赛（2017–2020）；<span class="mono">*0xA</span> 是六星参与的新一代高校联合战队。每项成绩均附公开来源。</p>
       </div>
-      <div class="join-cta">
-        <p>招新报名方式：<span class="placeholder-text">（待补充）</span></p>
-        <a class="btn-primary" href="#" aria-disabled="true">报名入口（暂未开放）</a>
+    </section>
+
+    <section class="section team" id="members">
+      <div class="container team-layout">
+        <header class="team-heading reveal">
+          <p class="eyebrow">THE TEAM</p>
+          <h2>一起做难而正确的事。</h2>
+          <p>成员资料将逐步完善。现在，先从现任队长开始认识六星。</p>
+        </header>
+        <a class="member-profile reveal" href="https://gyrojibering.github.io/" target="_blank" rel="noopener" aria-label="访问 GyroJ 的个人主页">
+          <span class="member-top">
+            <span class="member-avatar">
+              <img src="assets/gyroj-avatar.jpeg" alt="GyroJ 的头像" width="400" height="400" loading="lazy" />
+            </span>
+            <span class="member-link">个人主页 <span aria-hidden="true">↗</span></span>
+          </span>
+          <span class="member-meta">CAPTAIN · WEB / REVERSE</span>
+          <strong>GyroJ</strong>
+          <p class="member-bio">关于我，只是一个生在没有杨培杰时代的凡人...</p>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section join" id="join">
+      <div class="container">
+        <div class="join-panel reveal">
+          <div class="join-copy">
+            <p class="eyebrow">JOIN SIXSTARS</p>
+            <h2>下一个答案，<br />也许由你写下。</h2>
+            <p>无论你刚刚入门，还是已经身经百战，只要愿意投入时间、保持诚实并持续钻研，六星都欢迎你。</p>
+          </div>
+          <div class="join-details">
+            <div>
+              <span>校内招新</span>
+              <p>之后我们会在学校开展线下招新活动，具体时间与安排将在确认后公布。</p>
+            </div>
+            <div>
+              <span>直接申请</span>
+              <p>也可以提前准备个人简历，直接发送至队长邮箱。</p>
+            </div>
+            <a class="join-email" href="mailto:duanguangjie607@gmail.com">
+              <span>发送简历</span>
+              <strong>duanguangjie607@gmail.com</strong>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- 页脚 -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img class="logo-img footer-logo" src="logo.png" alt="六星战队 ******" />
-        <p>复旦大学六星战队 ******</p>
+    <div class="container footer-main">
+      <a class="brand footer-brand" href="#top" aria-label="返回六星战队首页">
+        <span class="brand-image">
+          <img src="assets/sixstars-team-mark.jpg" alt="" />
+        </span>
+        <span class="brand-copy"><strong>******</strong><small>FUDAN CTF TEAM</small></span>
+      </a>
+      <div class="footer-nav">
+        <a href="#about">关于</a>
+        <a href="#fields">方向</a>
+        <a href="#honors">荣誉</a>
+        <a href="#members">成员</a>
       </div>
-      <div class="footer-links">
-        <a href="#about">关于我们</a><span>/</span>
-        <a href="#fields">研究方向</a><span>/</span>
-        <a href="#honors">荣誉成就</a><span>/</span>
-        <a href="#join">加入我们</a>
-      </div>
-      <div class="footer-contact">
-        <p>GitHub：<a href="https://github.com/GyroJibering/sixstars-official-web-pages" target="_blank" rel="noopener">GyroJibering/sixstars-official-web-pages</a></p>
-        <p>Website：<a href="https://gyrojibering.github.io/sixstars-official-web-pages/">gyrojibering.github.io/sixstars-official-web-pages</a></p>
-      </div>
-      <p class="copyright">Copyright © 复旦大学六星战队 ******. All rights reserved.</p>
+      <a class="footer-github" href="https://github.com/GyroJibering/sixstars-official-web-pages" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="container footer-bottom">
+      <p>复旦大学六星战队 · 上海</p>
+      <p>© 2026 ******</p>
     </div>
   </footer>
 
