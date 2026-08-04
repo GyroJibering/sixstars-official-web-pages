@@ -61,6 +61,35 @@ if ('IntersectionObserver' in window && sections.length) {
 }
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const memberMarquee = document.querySelector('.member-marquee');
+const memberTrack = memberMarquee?.querySelector('.member-marquee-track');
+const memberSet = memberTrack?.querySelector('.members-directory');
+const memberMotionToggle = document.getElementById('memberMotionToggle');
+
+if (memberTrack && memberSet) {
+  const memberSetClone = memberSet.cloneNode(true);
+  memberSetClone.classList.add('members-directory--clone');
+  memberSetClone.setAttribute('aria-hidden', 'true');
+  memberSetClone.inert = true;
+  memberSetClone.querySelectorAll('a').forEach((link) => {
+    link.tabIndex = -1;
+  });
+  memberTrack.append(memberSetClone);
+}
+
+if (memberMotionToggle && memberMarquee) {
+  if (reduceMotion) {
+    memberMotionToggle.hidden = true;
+  } else {
+    memberMotionToggle.addEventListener('click', () => {
+      const paused = memberMarquee.classList.toggle('is-paused');
+      memberMotionToggle.setAttribute('aria-pressed', String(paused));
+      const label = memberMotionToggle.querySelector('.marquee-toggle-label');
+      if (label) label.textContent = paused ? '继续滚动' : '暂停滚动';
+    });
+  }
+}
+
 const revealItems = Array.from(document.querySelectorAll('.reveal'));
 
 if (!reduceMotion && 'IntersectionObserver' in window) {
