@@ -351,6 +351,58 @@ a {
 }
 
 /* ============ 荣誉成就 ============ */
+.honors-highlight {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 38px;
+  padding: 34px 38px;
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(0, 229, 160, 0.14), transparent 46%),
+    var(--dark);
+  border-left: 3px solid var(--accent);
+}
+
+.honors-highlight-year {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -2px;
+}
+
+.honors-highlight-kicker {
+  margin-bottom: 7px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.honors-highlight h3 {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.honors-highlight div > p:last-of-type {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14.5px;
+}
+
+.honors-highlight a {
+  display: inline-block;
+  margin-top: 14px;
+  color: #fff;
+  font-size: 13.5px;
+}
+
+.mono {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+}
+
 .honors-table-wrap {
   overflow-x: auto;
 }
@@ -375,19 +427,56 @@ a {
   letter-spacing: 0.5px;
 }
 
-.honors-table td:last-child,
-.honors-table th:last-child {
+.honors-table td:first-child,
+.honors-table th:first-child {
   white-space: nowrap;
   color: var(--text-secondary);
+}
+
+.honors-table td:nth-child(2) {
+  width: 110px;
+  white-space: nowrap;
+}
+
+.honors-table td:last-child {
+  min-width: 440px;
+}
+
+.honors-table td:last-child a {
+  color: var(--text);
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.honors-table td:last-child a:hover {
+  color: var(--primary);
+  border-bottom-color: currentColor;
 }
 
 .honors-table tbody tr:hover {
   background: var(--bg);
 }
 
-.placeholder-row td {
-  color: var(--text-muted);
-  font-style: italic;
+.honor-year {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-weight: 700;
+}
+
+.honor-team {
+  display: inline-block;
+  padding: 4px 9px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: #006a4e;
+  background: rgba(0, 229, 160, 0.12);
+  border: 1px solid rgba(0, 229, 160, 0.35);
+}
+
+.honor-team--alliance {
+  color: #075fa6;
+  background: rgba(0, 113, 212, 0.08);
+  border-color: rgba(0, 113, 212, 0.26);
 }
 
 .honors-more {
@@ -404,6 +493,11 @@ a {
   gap: 28px;
 }
 
+.members-grid--single {
+  grid-template-columns: minmax(260px, 340px);
+  justify-content: center;
+}
+
 .member-card {
   background: var(--bg-white);
   padding: 32px 20px;
@@ -416,12 +510,56 @@ a {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-.avatar-placeholder {
-  width: 88px;
-  height: 88px;
+.member-card--featured {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  border-top: 2px solid var(--accent);
+}
+
+.member-card--featured::after {
+  content: "******";
+  position: absolute;
+  right: -8px;
+  bottom: -24px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 62px;
+  color: rgba(0, 229, 160, 0.07);
+  letter-spacing: -14px;
+  pointer-events: none;
+}
+
+.member-profile-link {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 34px 24px 30px;
+  color: inherit;
+}
+
+.member-avatar {
+  display: grid;
+  place-items: center;
+  width: 92px;
+  height: 92px;
   margin: 0 auto 18px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d7dde6, #eef1f5);
+  background: linear-gradient(135deg, var(--dark), #14334a);
+  border: 2px solid rgba(0, 229, 160, 0.7);
+  box-shadow: 0 0 0 6px rgba(0, 229, 160, 0.08);
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.member-role {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 3px 9px;
+  font-size: 12px;
+  color: #006a4e;
+  background: rgba(0, 229, 160, 0.12);
 }
 
 .member-card h3 {
@@ -433,6 +571,13 @@ a {
   margin-top: 6px;
   font-size: 13.5px;
   color: var(--text-muted);
+}
+
+.member-homepage {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 13.5px;
+  color: var(--primary);
 }
 
 .members-note {
@@ -583,6 +728,27 @@ a {
 }
 
 @media (max-width: 680px) {
+  .honors-highlight {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 28px 24px;
+  }
+
+  .honors-highlight-year {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .honors-highlight h3 {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .honors-table th,
+  .honors-table td {
+    padding: 14px 16px;
+  }
+
   .nav-links {
     position: fixed;
     top: var(--nav-height);
