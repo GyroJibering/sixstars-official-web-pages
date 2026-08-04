@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="复旦大学六星战队（******）官方网站 —— 复旦大学网络安全 CTF 战队" />
+  <title>六星战队 ****** | 复旦大学 CTF 战队</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a class="logo" href="#top">
+        <img class="logo-img" src="logo.png" alt="六星战队 ******" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">关于我们</a>
+        <a href="#fields">研究方向</a>
+        <a href="#honors">荣誉成就</a>
+        <a href="#members">团队成员</a>
+        <a href="#join">加入我们</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero 区 -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <canvas id="starCanvas"></canvas>
+      <div class="hero-grid"></div>
+      <div class="hero-scanline"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">&gt; Fudan University CTF Team_</p>
+      <h1 class="glitch" data-text="复旦大学的网络安全爱好者聚集地">复旦大学的网络安全爱好者聚集地</h1>
+      <p class="hero-sub">六星战队 ****** —— 与我们一起，在攻防之间探索安全的边界</p>
+      <p class="hero-flag">flag{W3lc0me_t0_S1xst4rs}</p>
+    </div>
+  </section>
+
+  <!-- 简介 -->
+  <section class="section intro" id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <article>
+          <h2>复旦大学 CTF 校队</h2>
+          <p>六星战队（******）是由复旦大学计算机科学技术学院学生组成的网络安全 CTF 战队。战队长期活跃于国内外各大 CTF 竞赛，并作为 XCTF 联赛社区战队主办 *CTF 国际赛。</p>
+        </article>
+        <article>
+          <h2>网络安全爱好者的聚集地</h2>
+          <p>我们是一群对网络安全充满热情的同学，研究方向覆盖二进制漏洞挖掘与利用、Web 渗透、密码学、逆向工程、区块链安全等领域，让每一位安全爱好者都能找到属于自己的舞台。</p>
+        </article>
+      </div>
+      <figure class="intro-photo">
+        <div class="photo-placeholder">
+          <span>合影照片（待补充）</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 研究方向 -->
+  <section class="section section-alt" id="fields">
+    <div class="container">
+      <header class="section-head">
+        <h2>我们的方向</h2>
+        <p>CTF 六大经典方向，总有一个适合你</p>
+      </header>
+      <div class="fields-grid">
+        <article class="field-card">
+          <div class="field-icon">Pwn</div>
+          <h3>二进制漏洞利用</h3>
+          <p>挖掘并利用程序中的内存破坏漏洞，劫持控制流，夺取系统权限。</p>
+        </article>
+        <article class="field-card">
+          <div class="field-icon">Web</div>
+          <h3>Web 安全</h3>
+          <p>研究 Web 应用中的注入、越权、反序列化等漏洞，攻破层层防线。</p>
+        </article>
+        <article class="field-card">
+          <div class="field-icon">Rev</div>
+          <h3>逆向工程</h3>
+          <p>拆解二进制程序，还原程序逻辑，与混淆和加壳斗智斗勇。</p>
+        </article>
+        <article class="field-card">
+          <div class="field-icon">Crypto</div>
+          <h3>密码学</h3>
+          <p>分析密码算法的设计与实现缺陷，用数学破解加密的秘密。</p>
+        </article>
+        <article class="field-card">
+          <div class="field-icon">Misc</div>
+          <h3>安全杂项</h3>
+          <p>取证分析、隐写、编码等包罗万象的安全技术，考验知识的广度。</p>
+        </article>
+        <article class="field-card">
+          <div class="field-icon">Chain</div>
+          <h3>区块链安全</h3>
+          <p>研究智能合约与区块链系统的安全问题，探索 Web3 时代的攻防。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 荣誉成就 -->
+  <section class="section" id="honors">
+    <div class="container">
+      <header class="section-head">
+        <h2>荣誉成就</h2>
+        <p>部分近年竞赛成绩与赛事组织经历</p>
+      </header>
+      <div class="honors-table-wrap">
+        <table class="honors-table">
+          <thead>
+            <tr><th>赛事 / 荣誉</th><th>时间</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>主办 *CTF 国际赛（第七届 XCTF 国际网络攻防联赛分站赛）</td><td>2022</td></tr>
+            <tr><td>第十二届全国大学生信息安全竞赛创新实践能力赛总决赛 一等奖</td><td>2019</td></tr>
+            <tr><td>鹏城杯线上解题赛 第一名</td><td>2018</td></tr>
+            <tr><td>主办 *CTF 国际赛，吸引全球 83 个国家和地区 343 支战队参赛</td><td>2018</td></tr>
+            <tr class="placeholder-row"><td>更多荣誉整理中……</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="honors-more">更多比赛记录可在 <a href="https://ctftime.org/" target="_blank" rel="noopener">CTFtime</a> 查看（战队主页链接待补充）</p>
+    </div>
+  </section>
+
+  <!-- 团队成员 -->
+  <section class="section section-alt" id="members">
+    <div class="container">
+      <header class="section-head">
+        <h2>认识我们的团队</h2>
+        <p>来自复旦大学各院系的安全爱好者</p>
+      </header>
+      <div class="members-grid">
+        <article class="member-card">
+          <div class="avatar-placeholder"></div>
+          <h3>成员姓名</h3>
+          <p>研究方向（待补充）</p>
+        </article>
+        <article class="member-card">
+          <div class="avatar-placeholder"></div>
+          <h3>成员姓名</h3>
+          <p>研究方向（待补充）</p>
+        </article>
+        <article class="member-card">
+          <div class="avatar-placeholder"></div>
+          <h3>成员姓名</h3>
+          <p>研究方向（待补充）</p>
+        </article>
+        <article class="member-card">
+          <div class="avatar-placeholder"></div>
+          <h3>成员姓名</h3>
+          <p>研究方向（待补充）</p>
+        </article>
+      </div>
+      <p class="members-note">成员名单整理中，敬请期待。</p>
+    </div>
+  </section>
+
+  <!-- 加入我们 -->
+  <section class="section join" id="join">
+    <div class="container">
+      <header class="section-head">
+        <h2>加入我们</h2>
+        <p>无论你是刚入门的新手，还是身经百战的选手，我们都欢迎你</p>
+      </header>
+      <div class="join-grid">
+        <article class="join-card">
+          <h3>你将获得</h3>
+          <ul>
+            <li>系统的 CTF 各方向入门培训与技术分享</li>
+            <li>与队友一起参加国内外高水平 CTF 竞赛的机会</li>
+            <li>浓厚的技术氛围与志同道合的伙伴</li>
+            <li>参与组织 *CTF 等大型赛事的经历</li>
+          </ul>
+        </article>
+        <article class="join-card">
+          <h3>我们期待</h3>
+          <ul>
+            <li>对网络安全有浓厚的兴趣与热情</li>
+            <li>具备一定的编程基础，乐于钻研</li>
+            <li>愿意投入时间训练并参加比赛</li>
+            <li>诚实守信，遵守法律与道德底线</li>
+          </ul>
+        </article>
+      </div>
+      <div class="join-cta">
+        <p>招新报名方式：<span class="placeholder-text">（待补充）</span></p>
+        <a class="btn-primary" href="#" aria-disabled="true">报名入口（暂未开放）</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="logo-img footer-logo" src="logo.png" alt="六星战队 ******" />
+        <p>复旦大学六星战队 ******</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">关于我们</a><span>/</span>
+        <a href="#fields">研究方向</a><span>/</span>
+        <a href="#honors">荣誉成就</a><span>/</span>
+        <a href="#join">加入我们</a>
+      </div>
+      <div class="footer-contact">
+        <p>联系邮箱：<span class="placeholder-text">（待补充）</span></p>
+        <p>GitHub：<a href="https://github.com/GyroJibering/sixstars-official-web-pages" target="_blank" rel="noopener">GyroJibering/sixstars-official-web-pages</a></p>
+      </div>
+      <p class="copyright">Copyright © 复旦大学六星战队 ******. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
