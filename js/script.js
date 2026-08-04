@@ -1,17 +1,74 @@
 // 移动端导航菜单
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+const navbar = document.getElementById('navbar');
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+function closeMenu() {
+  navLinks.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', '打开菜单');
+}
 
-// 点击菜单项后自动收起
-navLinks.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A') {
-    navLinks.classList.remove('open');
-  }
-});
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const willOpen = !navLinks.classList.contains('open');
+    navLinks.classList.toggle('open', willOpen);
+    navToggle.setAttribute('aria-expanded', String(willOpen));
+    navToggle.setAttribute('aria-label', willOpen ? '关闭菜单' : '打开菜单');
+  });
+
+  // 点击菜单项后自动收起
+  navLinks.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A') {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+}
+
+// 导航栏滚动状态
+function updateNavbar() {
+  navbar?.classList.toggle('scrolled', window.scrollY > 12);
+}
+
+window.addEventListener('scroll', updateNavbar, { passive: true });
+updateNavbar();
+
+// 根据当前区块高亮导航
+const sectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+const observedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if ('IntersectionObserver' in window && observedSections.length) {
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+    if (!visible) return;
+
+    sectionLinks.forEach((link) => {
+      const active = link.getAttribute('href') === `#${visible.target.id}`;
+      link.classList.toggle('active', active);
+      if (active) {
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }, {
+    rootMargin: '-30% 0px -55%',
+    threshold: [0, 0.2, 0.5],
+  });
+
+  observedSections.forEach((section) => sectionObserver.observe(section));
+}
 
 // 禁用未开放的报名入口
 document.querySelectorAll('a[aria-disabled="true"]').forEach((el) => {
@@ -22,6 +79,7 @@ document.querySelectorAll('a[aria-disabled="true"]').forEach((el) => {
 const canvas = document.getElementById('starCanvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let W, H, particles, sixStars;
 
   function resize() {
@@ -102,10 +160,16 @@ if (canvas) {
       ctx.restore();
     });
 
-    requestAnimationFrame(draw);
+    if (!reduceMotion) {
+      requestAnimationFrame(draw);
+    }
   }
 
   window.addEventListener('resize', resize);
   resize();
-  requestAnimationFrame(draw);
+  if (reduceMotion) {
+    draw(0);
+  } else {
+    requestAnimationFrame(draw);
+  }
 }
