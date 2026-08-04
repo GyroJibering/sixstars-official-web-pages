@@ -576,6 +576,39 @@ a {
   font-size: 13px;
 }
 
+.honors-archive-link {
+  margin-top: 70px;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  transition: border-color 220ms ease;
+}
+
+.honors-archive-link:hover {
+  border-color: rgba(156, 210, 184, 0.65);
+}
+
+.honors-archive-link > span:first-child {
+  color: #7ebca2;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.honors-archive-link strong {
+  font-size: 19px;
+  font-weight: 520;
+}
+
+.honors-archive-link > span:last-child {
+  color: #9cd2b8;
+  font-size: 20px;
+}
+
 .alumni {
   background: var(--paper);
 }
@@ -1329,6 +1362,20 @@ a {
 
   .record-note {
     margin-top: 34px;
+  }
+
+  .honors-archive-link {
+    margin-top: 48px;
+    grid-template-columns: 1fr auto;
+    gap: 8px 20px;
+  }
+
+  .honors-archive-link > span:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .honors-archive-link strong {
+    font-size: 16px;
   }
 
   .alumni-list {
