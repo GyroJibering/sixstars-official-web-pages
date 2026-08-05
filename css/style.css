@@ -997,6 +997,15 @@ a {
   letter-spacing: -0.045em;
 }
 
+.member-profile strong small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 520;
+  letter-spacing: 0;
+}
+
 .member-link {
   color: var(--accent-dark);
   font-size: 11px;
